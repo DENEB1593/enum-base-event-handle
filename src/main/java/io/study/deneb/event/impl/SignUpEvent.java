@@ -1,5 +1,6 @@
-package io.study.deneb.event;
+package io.study.deneb.event.impl;
 
+import io.study.deneb.event.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

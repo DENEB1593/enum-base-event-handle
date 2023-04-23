@@ -7,7 +7,7 @@ import java.util.List;
 @Component
 public class EventAggregator {
 
-  private List<? extends Event> events;
+  private final List<? extends Event> events;
 
   EventAggregator(List<? extends Event> events) {
     this.events = events;
@@ -17,7 +17,7 @@ public class EventAggregator {
     return events.stream()
         .filter(policy -> policy.getClass().isAssignableFrom(type.getType()))
         .findFirst()
-        .orElseThrow(() -> new IllegalArgumentException("no event policy"));
+        .orElseThrow(() -> new IllegalArgumentException("there's no event matching"));
   }
 
 }
